@@ -1,0 +1,111 @@
+import React from "react";
+
+export default function HacktoberfestPRDetails() {
+  const rules = [
+    {
+      id: "out-of-bounds",
+      title: "Your PR/MRs must be within the bounds of Hacktoberfest.",
+      tone: "out-of-bounds",
+    },
+    {
+      id: "excluded",
+      title:
+        "Repos that go against Hacktoberfest's values will be excluded from qualification and PR/MRs made to those repos won't count.",
+      tone: "excluded",
+    },
+    {
+      id: "spam",
+      title: "Your PR/MRs must not be spammy.",
+      tone: "spam",
+    },
+    {
+      id: "participating",
+      title:
+        "Your PR/MRs must be in a repo tagged with the 'hacktoberfest' topic, or have the 'hacktoberfest-accepted' label.",
+      tone: "participating",
+    },
+    {
+      id: "invalid",
+      title: "Your PR/MRs must not be labeled as 'invalid'.",
+      tone: "invalid",
+    },
+    {
+      id: "accepted",
+      title:
+        "Your PR/MRs must be merged, have the 'hacktoberfest-accepted' label, or have an overall approving review.",
+      tone: "accepted",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#0f1224] to-[#1a1330] text-gray-100 p-8">
+      <div className="max-w-5xl mx-auto bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.04)] rounded-2xl p-8 shadow-2xl">
+        <header className="mb-6">
+          <h1 className="text-4xl font-extrabold tracking-tight">Pull/Merge Request Details</h1>
+          <p className="mt-2 text-sm text-gray-300">
+            Here's how we validate contributor pull/merge requests ("PR/MRs") for Hacktoberfest
+          </p>
+        </header>
+
+        <div className="space-y-6">
+          {rules.map((r) => (
+            <article
+              key={r.id}
+              className="relative flex items-start gap-4 bg-[rgba(0,0,0,0.12)] p-5 rounded-xl border border-[rgba(255,255,255,0.02)]"
+            >
+              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.02)]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 text-indigo-300"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+
+              <div className="flex-1">
+                <h3 className="text-sm font-semibold">
+                  <span className="inline-block mr-2 text-xs font-mono text-indigo-200">[{r.id}]</span>
+                  <span className="text-gray-100">{r.title}</span>
+                </h3>
+                <div className="mt-3 h-[1px] bg-[rgba(255,255,255,0.02)]" />
+              </div>
+
+              <button
+                aria-label="expand"
+                className="ml-4 w-10 h-10 rounded-md border border-dashed border-[rgba(255,255,255,0.06)] flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="w-5 h-5 text-gray-300"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
+                </svg>
+              </button>
+            </article>
+          ))}
+
+          <div className="p-5 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.02)]">
+            <p className="text-sm">
+              Once your PR/MRs pass all the checks above, it will be accepted for Hacktoberfest after the seven day review period.
+            </p>
+          </div>
+        </div>
+
+        <footer className="mt-8 text-sm text-gray-400">
+          <p>
+            Generated with a clean, responsive React + Tailwind component — copy this file into your project and
+            adjust styles or content as needed.
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}

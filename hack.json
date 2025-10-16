@@ -1,0 +1,16 @@
+{
+  "name": "hacktober-starter",
+  "version": "1.0.0",
+  "description": "Starter repo friendly for Hacktoberfest contributors",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT"
+}
